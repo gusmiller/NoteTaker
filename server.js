@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Middleware to serve up static assets from the public folder
-app.use(express.static('./Develop/public'));
+app.use(express.static('develop/public'));
 
 app.get('/', (request, response) => {
   response.send("Welcome to OntarioTECK")
