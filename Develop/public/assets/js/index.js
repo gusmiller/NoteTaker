@@ -33,6 +33,11 @@ const getNotes = () =>
     },
   });
 
+  /**
+   * This is where we call the API to save the data.
+   * @param {*} note 
+   * @returns 
+   */
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
