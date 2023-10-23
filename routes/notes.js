@@ -10,7 +10,7 @@
 const note = require('express').Router();
 
 // Helper functions for reading and writing to the JSON file
-const { readFromFile, readAndAppend } = require('../helpers/fileutils');
+const { readFromFile, readAndAppend } = require('./helpers/fileutils');
 
 /**
  * GET Route for retrieving all the notes from notes json file
@@ -18,7 +18,7 @@ const { readFromFile, readAndAppend } = require('../helpers/fileutils');
 note.get('/', (request, response) => {
     console.info(`${request.method} request to retrieve notes`);
 
-    readFromFile('../db/notes.json')
+    readFromFile('./db/notes.json')
         .then((data) => response.json(JSON.parse(data)));
 });
 
@@ -39,7 +39,7 @@ note.post('/', (request, response) => {
         notesdetails,
       };
   
-      readAndAppend(newNotes, '../db/notes.json');
+      readAndAppend(newNotes, './db/notes.json');
   
       const response = {
         status: 'success',
