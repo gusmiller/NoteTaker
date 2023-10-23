@@ -2,7 +2,7 @@
  * Carleton Bootcamp - 2023
  * Copyright 2023 Gustavo Miller
  * Licensed under MIT
- * Assignment - 06 Weather Dashboard
+ * Assignment - 11 Notes Taker
  * 
  * Date : 10/22/2023 8:20:48 AM
  *******************************************************/
