@@ -12,7 +12,7 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
-if (window.location.pathname === '/notes') {
+if (window.location.pathname === '/notes.html') {
 	noteTitle = document.querySelector('.note-title');
 	noteText = document.querySelector('.note-textarea');
 	saveNoteBtn = document.querySelector('.save-note');
@@ -20,10 +20,18 @@ if (window.location.pathname === '/notes') {
 	noteList = document.querySelectorAll('.list-container .list-group');
 }
 
-const show = (elem) => { elem.style.display = 'inline'; }; // Show an element
-const hide = (elem) => { elem.style.display = 'none'; }; // Hide an element
+// Show an element
+const show = (elem) => {
+	elem.style.display = 'inline';
+};
 
-let activeNote = {}; // activeNote is used to keep track of the note in the textarea
+// Hide an element
+const hide = (elem) => {
+	elem.style.display = 'none';
+};
+
+// activeNote is used to keep track of the note in the textarea
+let activeNote = {};
 
 const getNotes = () =>
 	fetch('/api/notes', {
@@ -33,25 +41,14 @@ const getNotes = () =>
 		},
 	});
 
-/**
- * This is where we call the API to save the data.
- * @param {*} note 
- * @returns 
- */
 const saveNote = (note) =>
 	fetch('/api/notes', {
 		method: 'POST',
-		headers: { 'Content-Type': 'application/json', },
+		headers: {
+			'Content-Type': 'application/json',
+		},
 		body: JSON.stringify(note),
-	})
-		.then((res) => res.json())
-		.then((data) => {
-			console.log('Successful POST request:', data);
-			return data;
-		})
-		.catch((error) => {
-			console.error('Error in POST request:', error);
-		});
+	});
 
 const deleteNote = (id) =>
 	fetch(`/api/notes/${id}`, {
@@ -184,8 +181,8 @@ const renderNoteList = async (notes) => {
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
-if (window.location.pathname === '/notes') {
-	saveNoteBtn.addEventListener('click', () => { console.log("HEY") });
+if (window.location.pathname === '/notes.html') {
+	saveNoteBtn.addEventListener('click', handleNoteSave);
 	newNoteBtn.addEventListener('click', handleNewNoteView);
 	noteTitle.addEventListener('keyup', handleRenderSaveBtn);
 	noteText.addEventListener('keyup', handleRenderSaveBtn);
