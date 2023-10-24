@@ -6,7 +6,6 @@
  * 
  * Date : 10/23/2023 5:31:49 PM
  *******************************************************/
-
 html,
 body {
   height: 100%;
@@ -84,4 +83,8 @@ body {
   border-right: none;
   padding: 20px;
   cursor: pointer;
+}
+
+.text-wrongpage {
+  color: rgb(168, 16, 31) !important
 }

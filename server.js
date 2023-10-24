@@ -1,6 +1,6 @@
 /******************************************************
  * Carleton Bootcamp - 2023
- * Copyright 2023 Gustavo Miller
+ * Copyright 2023 Gustavo Miller - OntarioTECK VBA 
  * Licensed under MIT
  * Assignment - 11 Notes Taker
  * 
@@ -11,6 +11,9 @@ const express = require('express');
 // The Path module provides a way of working with directories and file paths.
 // https://www.w3schools.com/nodejs/ref_path.asp
 const path = require('path');
+
+// Import the feedback router
+const api = require('./routes/index.js');
 
 // ExpressJS is a NodeJS module; express is the name of the module, and also the name we 
 // typically give to the variable we use to refer to its main function in code such as what you quoted.
@@ -25,16 +28,21 @@ const PORT = 3001; // Listening port
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Middleware to serve up static assets from the public folder
-app.use(express.static('./develop/public'));
+app.use('/api', api);
 
-app.get('/', (request, response) => {
-  response.send("Welcome to OntarioTECK")
-})
+// Middleware to serve up static assets from the public folder
+app.use(express.static('public'));
+
+// app.get('/', (request, response) => {
+//   response.send("Welcome to OntarioTECK")
+// })
 
 // The app.listen() function is used to bind and listen to the connections on the specified host and port. 
 // This method is identical to Node’s http.Server.listen() method.
 // https://www.geeksforgeeks.org/express-js-app-listen-function/
-app.listen(PORT, () =>
-  console.log(`App listening at http://localhost:${PORT} 🚀`)
-);
+app.listen(PORT, err => {
+  if (err) {
+    return console.log("Error", err);
+  }
+  console.log(`Listening on port ${PORT}`);
+});

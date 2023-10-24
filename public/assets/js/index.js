@@ -6,7 +6,6 @@
  * 
  * Date : 10/23/2023 5:31:49 PM
  *******************************************************/
-
 let noteTitle;
 let noteText;
 let saveNoteBtn;
