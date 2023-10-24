@@ -37,26 +37,26 @@ note.get('/', (request, response) => {
 note.post('/', (request, response) => {
   // Destructuring assignment for the items in request.body
   const { notetitle, notesdetails } = request.body;
-
+  console.log(request.body);
   // If all the required properties are present
-  if (notetitle && notesdetails) {
-    // Variable for the object we will save
-    const newNotes = {
-      notetitle,
-      notesdetails,
-    };
+  // if (notetitle && notesdetails) {
+  //   // Variable for the object we will save
+  //   const newNotes = {
+  //     notetitle,
+  //     notesdetails,
+  //   };
 
-    readAndAppend(newNotes, './db/notes.json');
+  //   readAndAppend(newNotes, './db/notes.json');
 
-    const response = {
-      status: 'success',
-      body: newNotes,
-    };
+  //   const response = {
+  //     status: 'success',
+  //     body: newNotes,
+  //   };
 
-    response.json(response);
-  } else {
-    response.json('Error in posting feedback');
-  }
+  //   response.json(response);
+  // } else {
+  //   response.json('Error in posting feedback');
+  // }
 });
 
 module.exports = note;

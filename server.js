@@ -37,9 +37,13 @@ app.use(express.static('public'));
 //   response.send("Welcome to OntarioTECK")
 // })
 
-// The app.listen() function is used to bind and listen to the connections on the specified host and port. 
-// This method is identical to Node’s http.Server.listen() method.
-// https://www.geeksforgeeks.org/express-js-app-listen-function/
+/**
+ * The app.listen() function is used to bind and listen to the connections on the specified host and port. 
+ * This method is identical to Node’s http.Server.listen() method.
+ * https://www.geeksforgeeks.org/express-js-app-listen-function/
+ * 
+ * Simplyfied version: app.listen(PORT, () => console.log(`App listening at http://localhost:${PORT}`));
+ */
 app.listen(PORT, err => {
   if (err) {
     return console.log("Error", err);
