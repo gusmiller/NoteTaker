@@ -14,20 +14,22 @@ const { readFromFile, readAndAppend } = require('../helpers/fileutils');
 
 // Configure middleware if we are to use: curretnly we are not using this for any particular
 // reason. We are just stamping the calling URL and the time.
-note.use(function (request, response, next) {
-	console.log(request.url, "@", Date.now());
-	next();
-})
+// note.use(function (request, response, next) {
+// 	console.log(request.url, "@", Date.now());
+// 	next();
+// })
 
 /**
  * GET Route for retrieving all the notes from notes json file. This is using the not-simplified
  * version of call. Could be invoked like: .then((data) => response.json(JSON.parse(data)));
   */
-note.get('/', (request, response) => {
+note.get('/', (req, res) => {
 	readFromFile('./db/notes.json')
-		.then(function (data) {
-			return response.json(JSON.parse(data));
-		})
+		.then((data) => res.json(JSON.parse(data)));
+	// readFromFile('./db/notes.json')
+	// 	.then(function (data) {
+	// 		return response.json(JSON.parse(data));
+	// 	})
 });
 
 /**
@@ -43,15 +45,14 @@ note.post('/', (request, response) => {
 			title,
 			text,
 		};
-		
+
 		readAndAppend(newNotes, './db/notes.json');
 
-		const response = {
+		const statusres = {
 			status: 'success',
 			body: newNotes,
 		};
-
-		response.json(response);
+		response.json(statusres);
 	} else {
 		response.json('Error in posting feedback');
 	}

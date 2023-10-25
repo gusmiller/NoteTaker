@@ -53,13 +53,11 @@ const writeToFile = (destination, content) =>
  *  @returns {void} Nothing
  */
 const readAndAppend = (content, file) => {
-    console.log(file);
     fs.readFile(file, 'utf8', (err, data) => {
         if (err) {
             console.error(err);
         } else {
             const parsedData = JSON.parse(data);
-            console.log(parsedData);
             parsedData.push(content);
             writeToFile(file, parsedData);
         }
