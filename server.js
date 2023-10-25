@@ -19,7 +19,7 @@ const api = require('./routes/index.js');
 // typically give to the variable we use to refer to its main function in code such as what you quoted.
 // https://stackoverflow.com/questions/27599614/var-express-requireexpress-var-app-express-what-is-express-is-it
 const app = express();
-const PORT = 3001; // Listening port
+const PORT = process.env.PORT || 3001; // Listening port
 
 // Middleware for parsing JSON and urlencoded form data
 // This is a built-in middleware function in Express. It parses incoming requests with JSON payloads and is based on body-parser.
