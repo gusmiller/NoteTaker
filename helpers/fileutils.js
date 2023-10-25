@@ -2,7 +2,7 @@
  * Carleton Bootcamp - 2023
  * Copyright 2023 Gustavo Miller
  * Licensed under MIT
- * Assignment - 06 Weather Dashboard
+ * Assignment - 11 Notes Taker
  * 
  * Date : 10/22/2023 3:11:00 PM
  *******************************************************/
@@ -42,9 +42,9 @@ const readFromFile = util.promisify(fs.readFile);
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
  */
 const writeToFile = (destination, content) =>
-  fs.writeFile(destination, JSON.stringify(content, null, 4), (err) =>
-    err ? console.error(err) : console.info(`\nData written to ${destination}`)
-  );
+    fs.writeFile(destination, JSON.stringify(content, null, 4), (err) =>
+        err ? console.error(err) : console.info(`\nData written to ${destination}`)
+    );
 
 /**
  *  Function to read data from a given a file and append some content
@@ -54,14 +54,14 @@ const writeToFile = (destination, content) =>
  */
 const readAndAppend = (content, file) => {
     fs.readFile(file, 'utf8', (err, data) => {
-      if (err) {
-        console.error(err);
-      } else {
-        const parsedData = JSON.parse(data);
-        parsedData.push(content);
-        writeToFile(file, parsedData);
-      }
+        if (err) {
+            console.error(err);
+        } else {
+            const parsedData = JSON.parse(data);
+            parsedData.push(content);
+            writeToFile(file, parsedData);
+        }
     });
-  };
-  
-  module.exports = { readFromFile, writeToFile, readAndAppend };  
+};
+
+module.exports = { readFromFile, writeToFile, readAndAppend };  
