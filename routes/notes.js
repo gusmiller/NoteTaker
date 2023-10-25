@@ -65,11 +65,12 @@ note.post('/', (request, response) => {
 
 	if (title && text) {
 		const newNotes = {
-			id: uuid(),
+			id: uuid(), // Add unique number between 1 to 1000
 			title,
 			text,
 		};
 
+		// Insert new notes into the db file
 		readAndAppend(newNotes, './db/notes.json');
 
 		const statusres = {
