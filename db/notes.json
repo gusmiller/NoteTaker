@@ -2,11 +2,21 @@
     {
         "id": "1000",
         "title": "OntarioTECK",
-        "text": "Develop Software for different needs using the same logic!"
+        "text": "Develop Software for different needs using the same logic! Have been in business for over 27 year serving mostly governent organizations, such as Parliament Hill, Department of National Defense (DND), Transport Canada, Health Canada and more.Visit my website at http://miller-hs.com for more information!"
     },
     {
-        "id": "458",
-        "title": "Javascript",
-        "text": "Not able to debug the application node.js + Javascript at the same time. I have to debug using VS + Browser inspect"
-    }
+        "id": "364",
+        "title": "REst calls",
+        "text": "Create REST API calls to add/delete notes saved on a text file in a JSON format. REst application is called from the front end interface, and the code is executed at the router layer."
+    },
+    {
+        "id": "884",
+        "title": "Delete API",
+        "text": "Implement Delete REST API to delete selected item from db.file. Code should remove item to delete, rebuild the file and replace with new contents. The list of notes should be refreshed once item has been removed."
+    },
+    {
+        "id": "989",
+        "title": "Add Key ID to Notes",
+        "text": "Implement mechanism to add a unique number -between 1 and 1000. This will give each note a unique value, which can be used to located notes."
+    } 
 ]
