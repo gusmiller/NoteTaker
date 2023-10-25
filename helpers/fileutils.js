@@ -42,9 +42,9 @@ const readFromFile = util.promisify(fs.readFile);
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
  */
 const writeToFile = (destination, content) =>
-  fs.writeFile(destination, JSON.stringify(content, null, 4), (err) =>
-    err ? console.error(err) : console.info(`\nData written to ${destination}`)
-  );
+    fs.writeFile(destination, JSON.stringify(content, null, 4), (err) =>
+        err ? console.error(err) : console.info(`\nData written to ${destination}`)
+    );
 
 /**
  *  Function to read data from a given a file and append some content
@@ -53,15 +53,17 @@ const writeToFile = (destination, content) =>
  *  @returns {void} Nothing
  */
 const readAndAppend = (content, file) => {
+    console.log(file);
     fs.readFile(file, 'utf8', (err, data) => {
-      if (err) {
-        console.error(err);
-      } else {
-        const parsedData = JSON.parse(data);
-        parsedData.push(content);
-        writeToFile(file, parsedData);
-      }
+        if (err) {
+            console.error(err);
+        } else {
+            const parsedData = JSON.parse(data);
+            console.log(parsedData);
+            parsedData.push(content);
+            writeToFile(file, parsedData);
+        }
     });
-  };
-  
-  module.exports = { readFromFile, writeToFile, readAndAppend };  
+};
+
+module.exports = { readFromFile, writeToFile, readAndAppend };  

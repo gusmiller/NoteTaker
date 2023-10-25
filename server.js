@@ -33,9 +33,9 @@ app.use('/api', api);
 // Middleware to serve up static assets from the public folder
 app.use(express.static('public'));
 
-// app.get('/', (request, response) => {
-//   response.send("Welcome to OntarioTECK")
-// })
+app.get('/', (request, response) => {
+	response.send(path.join(__dirname, './public/index.html'))
+})
 
 /**
  * The app.listen() function is used to bind and listen to the connections on the specified host and port. 
@@ -45,8 +45,8 @@ app.use(express.static('public'));
  * Simplyfied version: app.listen(PORT, () => console.log(`App listening at http://localhost:${PORT}`));
  */
 app.listen(PORT, err => {
-  if (err) {
-    return console.log("Error", err);
-  }
-  console.log(`Listening on port ${PORT}`);
+	if (err) {
+		return console.log("Error", err);
+	}
+	console.log(`Listening on port ${PORT}`);
 });
