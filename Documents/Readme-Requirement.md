@@ -22,29 +22,30 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 ## Acceptance Criteria
 
 GIVEN a note-taking application
-WHEN I open the Note Taker
-<br/>
-<span style="color:yellow;">THEN I am presented with a landing page with a link to a notes page</span>
 
-WHEN I click on the link to the notes page
+~~WHEN I open the Note Taker~~
 <br/>
-<span style="color:yellow;">THEN I am presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column</span>
+<span style="color:lightgreen;">THEN I am presented with a landing page with a link to a notes page</span>
 
-WHEN I enter a new note title and the note’s text
+~~WHEN I click on the link to the notes page~~
 <br/>
-<span style="color:yellow;">THEN a Save icon appears in the navigation at the top of the page</span>
+<span style="color:lightgreen;">THEN I am presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column</span>
 
-WHEN I click on the Save icon
+~~WHEN I enter a new note title and the note’s text~~
 <br/>
-<span style="color:yellow;">THEN the new note I have entered is saved and appears in the left-hand column with the other existing notes</span>
+<span style="color:lightgreen;">THEN a Save icon appears in the navigation at the top of the page</span>
 
-WHEN I click on an existing note in the list in the left-hand column
+~~WHEN I click on the Save icon~~
 <br/>
-<span style="color:yellow;">THEN that note appears in the right-hand column</span>
+<span style="color:lightgreen;">THEN the new note I have entered is saved and appears in the left-hand column with the other existing notes</span>
 
-WHEN I click on the Write icon in the navigation at the top of the page
+~~WHEN I click on an existing note in the list in the left-hand column~~
 <br/>
-<span style="color:yellow;">THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column</span>
+<span style="color:lightgreen;">THEN that note appears in the right-hand column</span>
+
+~~WHEN I click on the Write icon in the navigation at the top of the page~~
+<br/>
+<span style="color:lightgreen;">THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column</span>
 
 
 ## Mock-Up
@@ -58,26 +59,27 @@ The following images show the web application's appearance and functionality:
 
 ## Getting Started
 
-On the back end, the application should include a `db.json` file that will be used to store and retrieve notes using the `fs` module.
+On the back end, the application should include a `db.json` file that will be used to store and retrieve notes using the `fs` module. <span style="color:red;">(done)</span>
 
 The following HTML routes should be created:
 
-* `GET /notes` should return the `notes.html` file.
+* `GET /notes` should return the `notes.html` file. <span style="color:red;">(done)</span>
 
-* `GET *` should return the `index.html` file.
+* `GET *` should return the `index.html` file. <span style="color:red;">(done)</span>
 
 The following API routes should be created:
 
-* `GET /api/notes` should read the `db.json` file and return all saved notes as JSON.
+* `GET /api/notes` should read the `db.json` file and return all saved notes as JSON. <span style="color:red;">(done)</span>
 
-* `POST /api/notes` should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. You'll need to find a way to give each note a unique id when it's saved (look into npm packages that could do this for you).
+* `POST /api/notes` should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. <span style="color:red;">(done)</span>
+* You'll need to find a way to give each note a unique id when it's saved (look into npm packages that could do this for you). <span style="color:red;">(done)</span>
 
 
 ## Bonus
 
 You haven’t learned how to handle DELETE requests, but this application offers that functionality on the front end. As a bonus, try to add the DELETE route to the application using the following guideline:
 
-* `DELETE /api/notes/:id` should receive a query parameter that contains the id of a note to delete. To delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
+* `DELETE /api/notes/:id` should receive a query parameter that contains the id of a note to delete. To delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file. <span style="color:red;">(done)</span>
 
 - - -
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

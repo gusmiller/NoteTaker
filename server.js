@@ -37,6 +37,11 @@ app.get('/', (request, response) => {
 	response.send(path.join(__dirname, './public/index.html'))
 })
 
+// Wildcard route to direct users to a Index page
+app.get('*', (req, res) =>
+	res.sendFile(path.join(__dirname, './public/index.html'))
+);
+
 /**
  * The app.listen() function is used to bind and listen to the connections on the specified host and port. 
  * This method is identical to Node’s http.Server.listen() method.

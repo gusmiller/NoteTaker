@@ -61,6 +61,9 @@ const deleteNote = (id) =>
 		},
 	});
 
+/**
+ * This function will render the Acive note into the notepad area.
+ */
 const renderActiveNote = () => {
 	hide(saveNoteBtn);
 
@@ -110,7 +113,6 @@ const handleNoteDelete = (e) => {
 const handleNoteView = (e) => {
 	e.preventDefault();
 	activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
-	console.log(activeNote);
 	renderActiveNote();
 };
 
@@ -194,6 +196,7 @@ const getAndRenderNotes = () => getNotes().then(renderNoteList);
 if (window.location.pathname === '/notes.html' || window.location.pathname === '/notes') {
 	saveNoteBtn.addEventListener('click', handleNoteSave);
 	newNoteBtn.addEventListener('click', handleNewNoteView);
+
 	noteTitle.addEventListener('keyup', handleRenderSaveBtn);
 	noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
