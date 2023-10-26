@@ -101,6 +101,11 @@ Usage of the application is very simple. It allows users to add important Notes 
 
 Note gets saved in the db.json file and all notes are displayed. You may make any Note active, but they are marked as read-only. Perhaps in future versions I will allow user to edit and save existing Notes.
 
+### Heroku Application
+
+Application is also deployed into [Heroku - Note Taker](https://carletonnotetaker-a32fdddd812e.herokuapp.com/)</br>
+URL: https://carletonnotetaker-a32fdddd812e.herokuapp.com/
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 </div>
