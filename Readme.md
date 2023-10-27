@@ -1,6 +1,6 @@
 <a id="readme-top" name="readme-top"></a>
 
-<p align="center"><img src="./Documents/Images/carleton-u-logo.jpg" height="250"></p>
+<p align="center"><img src="./Documents/Images/carletonu-logo.jpg" height="250"></p>
 
 <p align="center" style="margin-top:25px; margin-bottom:50px;">
 	<a><img src="https://img.shields.io/static/v1.svg?label=javascript&message=Language&color=green"/></a>
