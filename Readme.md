@@ -33,12 +33,12 @@ Note taker, is an application developed in node.js with Express.js. A Client/Ser
 Here is my product!
 
 <div style="margin-top: 15px;">
-	<img src="./documents/Images/NOTE001.png">
+	<img src="./Documents/Images/NOTE001.png">
 	<p align="center">Note-Taker entry point</p>
 </div>
 
 <div style="margin-top: 15px;">
-	<img src="./documents/Images/NOTE002.png">
+	<img src="./Documents/Images/NOTE002.png">
 	<p align="center">List of available notes stored in db.json file.</p>
 </div>
 
